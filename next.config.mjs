@@ -5,7 +5,7 @@ const nextConfig = {
   pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
   sassOptions: {
     prependData: `
-      @import "@/styles/variables.scss";
+      @use "@/styles/variables.scss" as *;
     `,
   },
   images: {

@@ -1,0 +1,14 @@
+.container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $color-contrast;
+  padding: $spacing-y-xs 0;
+  border-bottom: 1px solid $color-gray-border;
+}
+
+.innerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

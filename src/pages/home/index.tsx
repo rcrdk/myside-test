@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import { Container } from '@/components/common/container'
+import { Header } from '@/components/common/header'
 import styles from './styles.module.scss'
 
 export default function Home() {
@@ -10,13 +12,13 @@ export default function Home() {
       </Head>
 
       <div className={styles.container}>
-        {/* header */}
+        <Header />
 
         <main>
-          <h1>Hello, World!</h1>
+          <Container>
+            <h1>Hello, World!</h1>
+          </Container>
         </main>
-
-        {/* footer */}
       </div>
     </>
   )
