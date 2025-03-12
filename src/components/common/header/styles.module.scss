@@ -12,3 +12,34 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.brand {
+  width: 115px;
+
+  @media ($min-width-sm) {
+    width: 140px;
+  }
+}
+
+.cardQuantity {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  background: $color-brand;
+  color: $color-brand-contrast;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-size: 0.6rem;
+  border-radius: 50%;
+
+  @media ($min-width-sm) {
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 0.75rem;
+  }
+}

@@ -11,15 +11,19 @@ export default function Home() {
         <title>MySide - Products</title>
       </Head>
 
-      <div className={styles.container}>
-        <Header />
+      <Header />
 
-        <main>
-          <Container>
-            <h1>Hello, World!</h1>
-          </Container>
-        </main>
-      </div>
+      <main>
+        <Container className={styles.heroContainer}>
+          <h1>
+            Shop the Best Products at <span>Unbeatable Prices!</span>
+          </h1>
+          <p>
+            Discover a wide selection of high-quality products, carefully curated to meet your needs. Enjoy seamless
+            shopping, fast shipping, and great deals every day!
+          </p>
+        </Container>
+      </main>
     </>
   )
 }

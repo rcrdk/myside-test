@@ -18,6 +18,18 @@ body {
 	color: $color-base;
 }
 
+a {
+  outline: none;
+  font-family: $font-family;
+}
+
+button {
+  all: unset;
+  box-sizing: border-box;
+  outline: none;
+  font-family: $font-family;
+}
+
 main {
   display: block;
 }
