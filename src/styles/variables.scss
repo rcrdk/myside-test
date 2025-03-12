@@ -9,8 +9,13 @@ $color-contrast: #ffffff;
 $color-brand: #fb414d;
 $color-brand-contrast: #ffffff;
 
+$color-gray-placeholder: #a0a0a0;
 $color-gray-border: #f0f0f0;
+$color-gray-form: #e0e0e0;
 $color-gray-button: #f0f0f0;
+$color-gray-dropdown: #d0d0d0;
+
+$shadow-dropdown: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 
 $min-width-sm: '(min-width : 576px)';
 $min-width-md: '(min-width : 768px)';
