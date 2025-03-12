@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $gap-container;
+
+  @media ($min-width-sm) {
+    width: 540px;
+  }
+
+  @media ($min-width-md) {
+    width: 720px;
+  }
+
+  @media ($min-width-lg) {
+    width: 960px;
+  }
+  
+  @media ($min-width-xl) {
+    width: 1140px;
+  }
+  
+  @media ($min-width-xxl) {
+    width: 1320px;
+  }
+}
