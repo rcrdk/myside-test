@@ -3,6 +3,11 @@ const nextConfig = {
   trailingSlash: true,
   reactStrictMode: true,
   pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
+  sassOptions: {
+    prependData: `
+      @import "@/styles/variables.scss";
+    `,
+  },
   images: {
     remotePatterns: [
       {
