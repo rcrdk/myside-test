@@ -3,9 +3,10 @@ import Head from 'next/head'
 import { Container } from '@/components/common/container'
 import { Header } from '@/components/common/header'
 import { SearchBox } from '@/components/home/search-box'
+import { ProductFiltersContextProvider } from '@/contexts/product-filters-context'
 import styles from './styles.module.scss'
 
-export default function Home() {
+function HomeComponent() {
   return (
     <>
       <Head>
@@ -28,5 +29,13 @@ export default function Home() {
         </Container>
       </main>
     </>
+  )
+}
+
+export default function Home() {
+  return (
+    <ProductFiltersContextProvider>
+      <HomeComponent />
+    </ProductFiltersContextProvider>
   )
 }

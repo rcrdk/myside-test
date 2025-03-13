@@ -1,13 +1,12 @@
-import { useState } from 'react'
 import { Search } from 'lucide-react'
 
 import { Button } from '@/components/common/button'
+import { useProductFilters } from '@/hooks/use-product-filters'
 import { SearchDropdown } from '../search-dropdown'
 import styles from './styles.module.scss'
 
 export function SearchBox() {
-  const [query, setQuery] = useState('')
-  const [category, setCategory] = useState('')
+  const { searchQuery, onChangeSearchQuery } = useProductFilters()
 
   return (
     <search className={styles.container}>
@@ -16,13 +15,13 @@ export function SearchBox() {
         autoCorrect="off"
         placeholder="What are you looking for?"
         className={styles.input}
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        value={searchQuery}
+        onChange={onChangeSearchQuery}
       />
 
       <div className={styles.divisor} />
 
-      <SearchDropdown selectedCategory={category} onChangeCategory={setCategory} />
+      <SearchDropdown />
 
       <div className={styles.divisor} />
 
