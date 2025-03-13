@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 import { Button } from '@/components/common/button'
@@ -12,6 +13,21 @@ type Props = {
 export function Pagination({ totalPages, totalProducts }: Props) {
   const { currentPage, onChangePage } = useProductFilters()
 
+  const handlePageChange = useCallback(
+    (mode: 'increase' | 'decrease') => {
+      onChangePage(mode)
+
+      if (document.documentElement) {
+        document.documentElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'start',
+        })
+      }
+    },
+    [onChangePage],
+  )
+
   return (
     <div className={styles.container}>
       <p className={styles.info}>
@@ -22,7 +38,7 @@ export function Pagination({ totalPages, totalProducts }: Props) {
         <Button
           variant={currentPage === 1 ? 'ghost' : 'primary'}
           disabled={currentPage === 1}
-          onClick={() => onChangePage('decrease')}
+          onClick={() => handlePageChange('decrease')}
         >
           <ChevronLeft />
           Prev
@@ -31,7 +47,7 @@ export function Pagination({ totalPages, totalProducts }: Props) {
         <Button
           variant={currentPage === totalPages ? 'ghost' : 'primary'}
           disabled={currentPage === totalPages}
-          onClick={() => onChangePage('increase')}
+          onClick={() => handlePageChange('increase')}
         >
           Next
           <ChevronRight />
