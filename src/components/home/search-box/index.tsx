@@ -22,7 +22,7 @@ export function SearchBox() {
 
       <div className={styles.divisor} />
 
-      <SearchDropdown category={category} onChangeCategory={setCategory} />
+      <SearchDropdown selectedCategory={category} onChangeCategory={setCategory} />
 
       <div className={styles.divisor} />
 
