@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import { Container } from '@/components/common/container'
 import { Header } from '@/components/common/header'
+import { ProductList } from '@/components/home/product-list'
 import { SearchBox } from '@/components/home/search-box'
 import { ProductFiltersContextProvider } from '@/contexts/product-filters-context'
 import styles from './styles.module.scss'
@@ -27,6 +28,8 @@ function HomeComponent() {
 
           <SearchBox />
         </Container>
+
+        <ProductList />
       </main>
     </>
   )

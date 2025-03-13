@@ -17,10 +17,13 @@ export function SearchDropdown() {
     [searchCategory],
   )
 
+  const triggerLabel = searchCategory || 'All categories'
+  const categories = data?.categories ?? []
+
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger className={styles.trigger} disabled={isFetching}>
-        <span>{searchCategory || 'All categories'}</span>
+        {isFetching ? <span>Loading...</span> : <span>{triggerLabel}</span>}
         <ChevronDown size={20} />
       </DropdownMenu.Trigger>
 
@@ -30,7 +33,7 @@ export function SearchDropdown() {
             All Categories
           </DropdownMenu.Item>
 
-          {data?.categories?.map((category) => (
+          {categories.map((category) => (
             <DropdownMenu.Item
               className={getItemClassName(category)}
               onClick={() => onChangeSearchCategory(category)}

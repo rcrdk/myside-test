@@ -6,33 +6,35 @@ import { SearchDropdown } from '../search-dropdown'
 import styles from './styles.module.scss'
 
 export function SearchBox() {
-  const { searchQuery, onChangeSearchQuery } = useProductFilters()
+  const { searchQuery, onChangeSearchQuery, onChangeFilters } = useProductFilters()
 
   return (
-    <search className={styles.container}>
-      <input
-        type="search"
-        autoCorrect="off"
-        placeholder="What are you looking for?"
-        className={styles.input}
-        value={searchQuery}
-        onChange={onChangeSearchQuery}
-      />
+    <search>
+      <form onSubmit={onChangeFilters} className={styles.container}>
+        <input
+          type="search"
+          autoCorrect="off"
+          placeholder="What are you looking for?"
+          className={styles.input}
+          value={searchQuery}
+          onChange={onChangeSearchQuery}
+        />
 
-      <div className={styles.divisor} />
+        <div className={styles.divisor} />
 
-      <SearchDropdown />
+        <SearchDropdown />
 
-      <div className={styles.divisor} />
+        <div className={styles.divisor} />
 
-      <Button variant="primary" mode="icon" className={styles.buttonIcon}>
-        <Search />
-      </Button>
+        <Button type="submit" variant="primary" mode="icon" className={styles.buttonIcon}>
+          <Search />
+        </Button>
 
-      <Button variant="primary" className={styles.buttonWithLabel}>
-        <Search />
-        <span>Search products</span>
-      </Button>
+        <Button type="submit" variant="primary" className={styles.buttonWithLabel}>
+          <Search />
+          <span>Search products</span>
+        </Button>
+      </form>
     </search>
   )
 }

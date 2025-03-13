@@ -5,7 +5,7 @@ type Request = {
 }
 
 type Response = ApiPayloadType & {
-  producs?: {
+  products?: {
     id: number
     title: string
     image: string
