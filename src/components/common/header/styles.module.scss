@@ -15,6 +15,7 @@
 
 .brand {
   width: 115px;
+  user-select: none;
 
   @media ($min-width-sm) {
     width: 140px;

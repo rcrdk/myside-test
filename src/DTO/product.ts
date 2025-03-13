@@ -8,6 +8,7 @@ export type ProductDTO = {
   model: string
   color: string
   category: string
-  discount: number
+  discount?: number
   popular?: boolean
+  onSale?: boolean
 }
