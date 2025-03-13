@@ -1,43 +1,54 @@
-# Next.js + Jest
+# 🔥 MySide: Front-End Test
+This is a project that serves as test for my application as front-end developer at MySide.
 
-This example shows how to configure Jest to work with Next.js.
+## 🔗 Deployment
+The project is hosted at Vercel, you can [access here](https://myside-test.vercel.app).
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript. This example also shows how to use Jest with the App Router and React Server Components.
 
-> **Note:** Since tests can be co-located alongside other files inside the App Router, we have placed those tests in `app/` to demonstrate this behavior (which is different than `pages/`). You can still place all tests in `__tests__` if you prefer.
+<img alt="MySide Test App Preview" src="https://github.com/rcrdk/myside-test/blob/main/public/app-presentation.png?raw=true" />
 
-## Deploy your own
+## 🖥️ Features
+- **Home:** list paginated products with query and category filters.
+- **Product:** show the details of the selected product.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-jest&project-name=with-jest&repository-name=with-jest)
+## 🔖 To-do:
+- The external API does not provide a query string search options. Until this feature is not implemented, the front-end use memoization to process query search and pagination.
+- The external API accepts any number as param when accessing the product page. When accessing with an non-existent id is returned the last product added. By adding an string ID an properly 404 page is shown.
 
-## How to Use
+## ⚙️ Usage
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+**Initial setup:**
+```shell
+# Clone the project
+git clone https://github.com/rcrdk/myside-test.git
 
-```bash
-npx create-next-app --example with-jest with-jest-app
+# Enter the folder
+cd myside-test
+
+# Install dependencies
+npm install
 ```
 
-```bash
-yarn create next-app --example with-jest with-jest-app
+---
+
+**Setup environment variables file:**
+```shell
+NEXT_PUBLIC_API_URL="https://fakestoreapi.in/api"
 ```
 
-```bash
-pnpm create next-app --example with-jest with-jest-app
+---
+
+**IDE Setup:**
+It's important to have installed on you IDE important extensions to maintain the code quality. Make sure you have installed:
+
+- ESlint
+- Prettier
+- EditorConfig
+
+---
+
+**Run project locally**
+```shell
+npm run dev
+# http://localhost:3000
 ```
-
-## Running Tests
-
-```bash
-npm test
-```
-
-```bash
-yarn test
-```
-
-```bash
-pnpm test
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
