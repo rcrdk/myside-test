@@ -1,0 +1,18 @@
+.container {
+  padding-block: $spacing-y-lg;
+
+  @media ($min-width-lg) {
+    padding-block: $spacing-y-xxl;
+  }
+}
+
+.title {
+  text-align: center;
+  margin: 0;
+  font-size: $font-display-sm;
+  font-weight: 600;
+
+  @media ($min-width-sm) {
+    font-size: $font-display-lg;
+  }
+}

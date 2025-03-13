@@ -1,12 +1,6 @@
 {
-	"singleQuote": true,
-  "trailingComma": "all",
-	"arrowParens": "always",
-  "semi": false,
+  "arrowParens": "always",
   "endOfLine": "auto",
-  "printWidth": 120,
-  "tabWidth": 2,
-  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-sort-json"],
   "importOrder": [
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
@@ -15,5 +9,11 @@
     "^@/(.*)$",
     "^[./]"
   ],
-  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"]
+  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-sort-json"],
+  "printWidth": 120,
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all"
 }

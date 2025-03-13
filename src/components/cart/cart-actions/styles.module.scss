@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: $spacing-y-lg;
+
+  @media ($min-width-lg) {
+    padding-top: $spacing-y-xxl;
+  }
+
+  @media ($min-width-sm) {
+    align-items: center;
+    flex-direction: row;
+  }
+}

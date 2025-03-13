@@ -22,7 +22,7 @@
   margin: 0 0 1rem;
   font-size: $font-h1-sm;
   text-wrap: balance;
-  
+
   @media ($min-width-md) {
     font-size: $font-h1-lg;
   }
@@ -41,7 +41,7 @@
   font-weight: 600;
   font-size: $font-small;
   padding: 0.5rem;
-  border-radius: .25rem .5rem;
+  border-radius: 0.25rem 0.5rem;
 }
 
 .badgeBranded {
@@ -51,7 +51,7 @@
   font-weight: 600;
   font-size: $font-small;
   padding: 0.5rem;
-  border-radius: .25rem .5rem;
+  border-radius: 0.25rem 0.5rem;
 }
 
 .divisor {
@@ -97,7 +97,7 @@
   flex-direction: column;
   justify-content: space-between;
   gap: $spacing-y-sm;
-  
+
   @media ($min-width-sm) {
     align-items: center;
     flex-direction: row;
@@ -117,7 +117,7 @@
   font-weight: 500;
   color: $color-brand;
   font-size: $font-h1-sm;
-  
+
   @media ($min-width-sm) {
     font-size: $font-display-sm;
   }

@@ -9,12 +9,15 @@ import { Container } from '@/components/common/container'
 import { Header } from '@/components/common/header'
 import { ProductImage } from '@/components/product/product-image'
 import { ProductDTO } from '@/DTO/product'
+import { useCart } from '@/hooks/use-cart'
 import { fetchProduct } from '@/http/fetch-product'
 import { splitLineBreaks } from '@/utils/split-line-breaks'
 import styles from './styles.module.scss'
 
 export default function Product({ product }: { product: ProductDTO }) {
   const [showFullDescription, setShowFullDescription] = useState(false)
+
+  const { onAddNewProduct } = useCart()
 
   const router = useRouter()
 
@@ -107,7 +110,7 @@ export default function Product({ product }: { product: ProductDTO }) {
                   </strong>
                 </p>
 
-                <Button variant="primary">
+                <Button variant="primary" onClick={() => onAddNewProduct(product)}>
                   <ShoppingCart />
                   <span>Adicionar ao carrinho</span>
                 </Button>

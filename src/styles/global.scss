@@ -1,6 +1,8 @@
-*, *:before, *:after {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+*,
+*:before,
+*:after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 }
 
@@ -13,9 +15,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-	font-family: $font-family;
-	background: $color-contrast;
-	color: $color-base;
+  font-family: $font-family;
+  background: $color-contrast;
+  color: $color-base;
 }
 
 a {

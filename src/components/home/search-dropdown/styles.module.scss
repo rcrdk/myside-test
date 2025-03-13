@@ -11,7 +11,7 @@
   user-select: none;
   text-transform: capitalize;
 
-  @media (max-width : 480px) {
+  @media (max-width: 480px) {
     padding: 0.5rem 0.75rem;
   }
 
@@ -42,7 +42,7 @@
   min-width: 12rem;
   user-select: none;
 
-  @media (max-width : 480px) {
+  @media (max-width: 480px) {
     min-width: calc(100vw - #{$spacing-y-sm * 2});
   }
 }
@@ -54,7 +54,7 @@
   font-size: 1rem;
   white-space: nowrap;
   line-height: 1;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   text-transform: capitalize;
   border-radius: 0.5rem;

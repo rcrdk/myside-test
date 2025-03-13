@@ -8,7 +8,7 @@
   @media ($min-width-lg) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
- 
+
   @media ($min-width-xl) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -20,11 +20,11 @@
 
 .containerInner {
   grid-column: 1 / span 2;
-  
+
   @media ($min-width-lg) {
     grid-column: 1 / span 3;
   }
- 
+
   @media ($min-width-xl) {
     grid-column: 1 / span 4;
   }
@@ -42,7 +42,13 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  
+  font-size: $font-lead-sm;
+  line-height: 1.35;
+
+  @media ($min-width-sm) {
+    font-size: $font-lead-lg;
+  }
+
   svg {
     stroke-width: 1;
   }
