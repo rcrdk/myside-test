@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { ShoppingCart } from 'lucide-react'
 
 import brandImage from '@/assets/myside-brand.svg'
@@ -10,7 +11,9 @@ export function Header() {
   return (
     <header className={styles.container}>
       <Container className={styles.innerContainer}>
-        <Image src={brandImage} width={140} height={38} alt="MySide" className={styles.brand} />
+        <Link href="/">
+          <Image src={brandImage} width={140} height={38} alt="MySide" className={styles.brand} />
+        </Link>
 
         <Button variant="ghost" mode="icon" aria-label="Shopping cart">
           <ShoppingCart size={24} />

@@ -1,0 +1,19 @@
+.container {
+  border-radius: .5rem;
+  background: $color-gray-skeleton;
+  display: block;
+  min-height: 0.5rem;
+  animation: pulsate 1s linear infinite alternate;
+}
+
+@keyframes pulsate {
+  0% { 
+    opacity: 0.5;
+  }
+  50% { 
+    opacity: 1.0;
+  }
+  100% { 
+    opacity: 0.5;
+  }
+}
