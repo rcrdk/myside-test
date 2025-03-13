@@ -1,18 +1,50 @@
+// Verificar SSG
+// Aplicar na Home
+// Usar React Query
+
 import { GetStaticPaths, GetStaticProps } from 'next'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 import { Container } from '@/components/common/container'
 import { Header } from '@/components/common/header'
-import { API } from '@/lib/api-client'
+import { ProductDTO } from '@/DTO/product'
+import { API, ApiPayloadType } from '@/lib/api-client'
+import styles from './styles.module.scss'
 
-export default function Product({ product }) {
+export default function Product({ product }: { product: ProductDTO }) {
+  const router = useRouter()
+
+  if (router.isFallback) {
+    return (
+      <>
+        <Head>
+          <title>MySide - Product details</title>
+        </Head>
+
+        <h1>Loading...</h1>
+      </>
+    )
+  }
+
   return (
-    <div>
-      <Header />
+    <>
+      <Head>
+        <title>MySide - {product.title}</title>
+      </Head>
 
-      <Container>
-        <h1>{product.title}</h1>
-      </Container>
-    </div>
+      <div>
+        <Header />
+
+        <Container className={styles.container}>
+          <h1>{product.title}</h1>
+          <p>{product.description}</p>
+          <p>{product.category}</p>
+          <p>{product.price}</p>
+          <p>{product.image}</p>
+        </Container>
+      </div>
+    </>
   )
 }
 
@@ -24,25 +56,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({ params }) => {
-  let product = null
+  const response = await API.get(`products/${params?.id}`).json<ApiPayloadType & { product: ProductDTO }>()
 
-  try {
-    const response = await API.get(`products/${params?.id}`).json()
-    product = response.product
-  } catch {
-    return {
-      notFound: true,
-    }
-  }
-
-  if (!product) {
+  if (!response || Object.keys(response.product).length === 0) {
     return {
       notFound: true,
     }
   }
 
   return {
-    props: { product },
+    props: { product: response.product },
     revalidate: 60 * 60 * 1, // 1h
   }
 }

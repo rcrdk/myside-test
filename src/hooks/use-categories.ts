@@ -6,5 +6,6 @@ export const useCategories = () => {
   return useQuery({
     queryKey: ['CATEGORIES'],
     queryFn: () => fetchCategories(),
+    refetchOnWindowFocus: false,
   })
 }

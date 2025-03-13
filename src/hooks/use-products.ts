@@ -10,5 +10,6 @@ export const useProducts = ({ category }: Props) => {
   return useQuery({
     queryKey: ['PRODUCTS', category],
     queryFn: () => fetchProducts({ category }),
+    refetchOnWindowFocus: false,
   })
 }
