@@ -1,24 +1,20 @@
 # 🔥 MySide: Front-End Test
-
 This is a project that serves as test for my application as front-end developer at MySide.
 
 ## 🔗 Deployment
-
 The project is hosted at Vercel, you can [access here](https://myside-test.vercel.app).
 
 <img alt="MySide Test App Preview" src="https://github.com/rcrdk/myside-test/blob/main/public/app-presentation.png?raw=true" />
 
 ## 🖥️ Features
-
-- **Home:** list paginated products with query and category filters.
-- **Product:** show the details of the selected product.
+- **Home:** Display a paginated list of products with category and search filters.
+- **Product:** Show detailed information about the selected item.
+- **Cart:** View and manage selected products in a list.
 
 ## 🔖 To-do:
-
 - The external API does not provide a query string search options. Until this feature is not implemented, the front-end use memoization to process query search and pagination.
 - The external API accepts any number as param when accessing the product page. When accessing with an non-existent id is returned the last product added. By adding an string ID an properly 404 page is shown.
-- Apply tests using JEST and React Testing Library.
-- Cart functionalities.
+- Finish the setup and apply tests using JEST and React Testing Library.
 
 ## ⚙️ Usage
 
