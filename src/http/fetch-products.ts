@@ -1,3 +1,4 @@
+import { ProductDTO } from '@/DTO/product'
 import { API, ApiPayloadType } from '@/lib/api-client'
 
 type Request = {
@@ -5,19 +6,7 @@ type Request = {
 }
 
 type Response = ApiPayloadType & {
-  products?: {
-    id: number
-    title: string
-    image: string
-    price: number
-    description: string
-    brand: string
-    model: string
-    color: string
-    category: string
-    discount: number
-    popular?: boolean
-  }[]
+  products?: ProductDTO[]
 }
 
 export async function fetchProducts({ category }: Request): Promise<Response | null> {

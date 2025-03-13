@@ -1,0 +1,24 @@
+.container {
+  margin-top: $spacing-y-sm;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-between;
+
+  @media ($min-width-sm) {
+    flex-direction: row;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info {
+  margin: 0;
+  font-size: $font-small;
+  color: $color-gray-text;
+}

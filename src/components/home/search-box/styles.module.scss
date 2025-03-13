@@ -1,4 +1,44 @@
 .container {
+  padding-block: $spacing-y-lg;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: $font-family;
+  text-wrap: balance;
+  gap: $spacing-y-xs;
+
+  @media ($min-width-lg) {
+    padding-block: $spacing-y-xxl;
+    width: 720px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: $font-display-sm;
+    font-weight: 600;
+
+    @media ($min-width-sm) {
+      font-size: $font-display-lg;
+    }
+
+    span {
+      color: $color-brand;
+    }
+  }
+
+  p {
+    margin: 0 0 $spacing-y-xs;
+    font-size: $font-lead-sm;
+    line-height: 1.35;
+    font-weight: 300;
+
+    @media ($min-width-sm) {
+      font-size: $font-lead-lg;
+    }
+  }
+}
+
+.filters {
   padding: 0.5rem;
   display: flex;
   gap: 0.5rem;
@@ -28,7 +68,7 @@
   appearance: none;
 
   @media (max-width : 480px) {
-    padding: 0.75rem;
+    padding: 0.5rem 0.75rem;
     margin-bottom: 0.25rem;
   }
 

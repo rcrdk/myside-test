@@ -10,6 +10,8 @@ interface ProductFiltersContextDataProps {
     category: string
   }
   onChangeFilters: (e: React.FormEvent) => void
+  currentPage: number
+  onChangePage: (mode: 'increase' | 'decrease') => void
 }
 export const ProductFiltersContext = createContext<ProductFiltersContextDataProps>({} as ProductFiltersContextDataProps)
 
@@ -23,6 +25,8 @@ export function ProductFiltersContextProvider({ children }: ProductFiltersContex
 
   const [filtersSelected, setFiltersSelected] = useState({ query: '', category: '' })
 
+  const [currentPage, setCurrentPage] = useState(1)
+
   function onChangeSearchQuery(e: React.ChangeEvent<HTMLInputElement>) {
     setSearchQuery(e.target.value)
   }
@@ -34,10 +38,22 @@ export function ProductFiltersContextProvider({ children }: ProductFiltersContex
   function onChangeFilters(e: React.FormEvent) {
     e.preventDefault()
 
+    setCurrentPage(1)
+
     setFiltersSelected({
       query: searchQuery,
       category: searchCategory,
     })
+  }
+
+  function onChangePage(mode: 'increase' | 'decrease') {
+    if (mode === 'increase') {
+      setCurrentPage((prev) => prev + 1)
+    }
+
+    if (mode === 'decrease') {
+      setCurrentPage((prev) => prev - 1)
+    }
   }
 
   return (
@@ -49,6 +65,8 @@ export function ProductFiltersContextProvider({ children }: ProductFiltersContex
         onChangeSearchCategory,
         filtersSelected,
         onChangeFilters,
+        currentPage,
+        onChangePage,
       }}
     >
       {children}
