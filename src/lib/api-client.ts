@@ -1,4 +1,4 @@
-import ky from 'ky'
+import ky from 'ky-universal'
 
 import { env } from './env'
 

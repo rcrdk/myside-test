@@ -14,6 +14,8 @@ The project is hosted at Vercel, you can [access here](https://myside-test.verce
 ## 🔖 To-do:
 - The external API does not provide a query string search options. Until this feature is not implemented, the front-end use memoization to process query search and pagination.
 - The external API accepts any number as param when accessing the product page. When accessing with an non-existent id is returned the last product added. By adding an string ID an properly 404 page is shown.
+- Apply tests using JEST and React Testing Library.
+- Cart functionalities.
 
 ## ⚙️ Usage
 
