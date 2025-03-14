@@ -1,5 +1,5 @@
 import { createContext, useCallback, useEffect, useMemo, useReducer, useState } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 import { ProductDTO } from '@/DTO/product'
 import {

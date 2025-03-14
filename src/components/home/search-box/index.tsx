@@ -20,33 +20,31 @@ export function SearchBoxComponent() {
         shopping, fast shipping, and great deals every day!
       </p>
 
-      <search>
-        <form onSubmit={onChangeFilters} className={styles.filters}>
-          <input
-            type="search"
-            autoCorrect="off"
-            placeholder="What are you looking for?"
-            className={styles.input}
-            value={searchQuery}
-            onChange={onChangeSearchQuery}
-          />
+      <form onSubmit={onChangeFilters} className={styles.filters}>
+        <input
+          type="search"
+          autoCorrect="off"
+          placeholder="What are you looking for?"
+          className={styles.input}
+          value={searchQuery}
+          onChange={onChangeSearchQuery}
+        />
 
-          <div className={styles.divisor} />
+        <div className={styles.divisor} />
 
-          <SearchDropdown />
+        <SearchDropdown />
 
-          <div className={styles.divisor} />
+        <div className={styles.divisor} />
 
-          <Button type="submit" variant="primary" mode="icon" className={styles.buttonIcon}>
-            <Search />
-          </Button>
+        <Button type="submit" variant="primary" mode="icon" className={styles.buttonIcon}>
+          <Search />
+        </Button>
 
-          <Button type="submit" variant="primary" className={styles.buttonWithLabel}>
-            <Search />
-            <span>Search products</span>
-          </Button>
-        </form>
-      </search>
+        <Button type="submit" variant="primary" className={styles.buttonWithLabel}>
+          <Search />
+          <span>Search products</span>
+        </Button>
+      </form>
     </Container>
   )
 }

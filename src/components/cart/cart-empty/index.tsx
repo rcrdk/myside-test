@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { ArrowRight, ShoppingCart } from 'lucide-react'
 
 import { Button } from '@/components/common/button'

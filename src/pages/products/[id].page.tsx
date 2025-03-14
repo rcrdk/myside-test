@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import { PlusCircle, ShoppingCart } from 'lucide-react'
 
 import { Button } from '@/components/common/button'
@@ -19,8 +18,6 @@ export default function Product({ product }: { product: ProductDTO }) {
 
   const { onAddNewProduct } = useCart()
 
-  const router = useRouter()
-
   const calculateOriginalPrice = useMemo(() => {
     if (!product.discount) {
       return null
@@ -37,18 +34,6 @@ export default function Product({ product }: { product: ProductDTO }) {
       hidden: paragraphs.slice(1),
     }
   }, [product.description])
-
-  if (router.isFallback) {
-    return (
-      <>
-        <Head>
-          <title>MySide - Product details</title>
-        </Head>
-
-        <h1>Loading...</h1>
-      </>
-    )
-  }
 
   const shouldDisplayReadMore = !showFullDescription && productDescription.hidden?.length
 

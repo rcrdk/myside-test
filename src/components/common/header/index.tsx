@@ -1,6 +1,6 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { ShoppingCart } from 'lucide-react'
 
 import brandImage from '@/assets/myside-brand.svg'
@@ -17,8 +17,8 @@ export function Header() {
   return (
     <header className={styles.container}>
       <Container className={styles.innerContainer}>
-        <Link href="/">
-          <Image src={brandImage} width={140} height={38} alt="MySide" className={styles.brand} />
+        <Link href="/" prefetch={false}>
+          <img src={brandImage.src} alt="MySide" className={styles.brand} />
         </Link>
 
         <Button variant="ghost" mode="icon" aria-label="Shopping cart" onClick={() => router.push('/cart')}>
