@@ -21,16 +21,4 @@ export const customJestConfig = {
   },
 }
 
-const jestConfig = async () => {
-  const nextJestConfig = await createJestConfig(customJestConfig)()
-
-  return {
-    ...nextJestConfig,
-    moduleNameMapper: {
-      '\\.svg$': '<rootDir>/tests/svg.js',
-      ...nextJestConfig.moduleNameMapper,
-    },
-  }
-}
-
-export default jestConfig
+module.exports = createJestConfig(customJestConfig)

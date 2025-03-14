@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom'
-import 'cross-fetch/polyfill'
 
-import { server } from './tests/mocking-handler'
+import { server } from './tests/msw-handlers'
 
 beforeAll(() => {
   server.listen()
