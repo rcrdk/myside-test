@@ -36,7 +36,7 @@ export function SearchBoxComponent() {
 
         <div className={styles.divisor} />
 
-        <Button type="submit" variant="primary" mode="icon" className={styles.buttonIcon}>
+        <Button type="submit" variant="primary" mode="icon" className={styles.buttonIcon} data-testid="filter-button">
           <Search />
         </Button>
 

@@ -1,4 +1,4 @@
-name: Run MySide tests
+name: Vitest Unit Tests
 on:
   push:
     branches: "**"
@@ -6,8 +6,8 @@ on:
     branches:
       - main
 jobs:
-  NextJS-Tests:
-    name: Run MySide tests
+  test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -18,7 +18,7 @@ jobs:
           node-version: "20"
       - name: Install dependencies
         run: npm install
-      - name: Run Jest tests
+      - name: Run Vitest tests
         run: npm run test:ci
         env:
           NEXT_PUBLIC_API_URL: https://fakestoreapi.in/api

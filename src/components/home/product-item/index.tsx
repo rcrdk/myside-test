@@ -15,7 +15,7 @@ export function ProductItem({ product }: Props) {
   const [imageLoading, setImageLoading] = useState(true)
 
   return (
-    <Link href={`/products/${product.id}`} className={styles.container} prefetch={false}>
+    <Link href={`/products/${product.id}`} className={styles.container} prefetch={false} data-testid="product-item">
       <div className={styles.image}>
         <Image
           src={product.image}

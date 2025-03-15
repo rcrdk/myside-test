@@ -28,7 +28,7 @@ export function SearchDropdown() {
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
-        <DropdownMenu.Content className={styles.dropdown} side="bottom" avoidCollisions={false}>
+        <DropdownMenu.Content className={styles.dropdown} side="bottom" avoidCollisions={false} forceMount>
           <DropdownMenu.Item className={getItemClassName('')} onClick={() => onChangeSearchCategory('')}>
             All Categories
           </DropdownMenu.Item>
@@ -38,8 +38,9 @@ export function SearchDropdown() {
               className={getItemClassName(category)}
               onClick={() => onChangeSearchCategory(category)}
               key={category}
+              asChild
             >
-              {category}
+              <button>{category}</button>
             </DropdownMenu.Item>
           ))}
         </DropdownMenu.Content>

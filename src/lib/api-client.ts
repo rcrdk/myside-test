@@ -1,4 +1,4 @@
-import ky from 'ky-universal'
+import ky from 'ky'
 
 import { env } from './env'
 
@@ -7,6 +7,8 @@ export type ApiPayloadType = {
   message: string
 }
 
-export const API = ky.create({
+export const API = ky.extend({
   prefixUrl: env.NEXT_PUBLIC_API_URL,
 })
+
+export const MockedAPI = (path: string) => `${env.NEXT_PUBLIC_API_URL}/${path}`

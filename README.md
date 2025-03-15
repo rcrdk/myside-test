@@ -45,7 +45,7 @@ NEXT_PUBLIC_API_URL="https://fakestoreapi.in/api"
 > Create a `.env.local` and a `.env.test.local` for testing purposes.
 
 > [!IMPORTANT]
-> Setup your variables also on `.github/workflows/tests.yaml` file for running your tests correctly during CI. You can setup [GitHub Actions Secrets](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables) in case of using private keys.
+> Setup your variables also on `.github/workflows/vitest.yaml` file for running your tests correctly during CI. You can setup [GitHub Actions Secrets](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables) in case of using private keys.
 
 ---
 
@@ -59,7 +59,7 @@ npm run dev
 ---
 
 ## 4️⃣ Testing:
-Run your tests locally using Jest:
+Run your tests locally using Vitest:
 
 ```shell
 # Watch
@@ -89,4 +89,4 @@ npm run test:ts
 ## 🔖 To-do:
 - The external API does not provide a query string search options. Until this feature is not implemented, the front-end use memoization to process query search and pagination.
 - The external API accepts any number as param when accessing the product page. When accessing with an non-existent id is returned the last product added. By adding an string ID an properly 404 page is shown.
-- Create tests using JEST and React Testing Library.
+- Create tests using Vitest and React Testing Library.
