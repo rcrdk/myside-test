@@ -8,7 +8,9 @@ import { wait } from '@/utils/wait'
 describe('Home', () => {
   it('should list all products', async () => {
     render(<Home />)
+
     await wait()
+
     const products = screen.getAllByTestId('product-item')
     expect(products).toHaveLength(6)
   })
